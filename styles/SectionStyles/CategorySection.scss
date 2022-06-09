@@ -1,0 +1,34 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+
+.category-section{
+    margin-block: 5rem;
+
+    .container{
+
+    }
+
+    &__head{
+        @include flex(false,flex-end);
+        gap: 2rem;
+
+        &__link{
+            color: Colors.$blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    &__holder{
+        @include flex(false,center,center);
+        gap: 3rem;
+        flex-wrap: wrap;
+        @include BREAK.media(sm){
+            justify-content: flex-start;
+        }
+    }
+}

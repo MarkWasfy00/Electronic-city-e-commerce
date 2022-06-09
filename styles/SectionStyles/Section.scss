@@ -1,0 +1,46 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+.section {
+    margin-block: 5rem;
+    &__header{
+        @include flex(column);
+        gap: 2rem;
+        margin-bottom: 2rem;
+        @include BREAK.media(sm){
+            flex-direction: row;
+            align-items: flex-end;
+        }
+
+        &__link{
+            text-decoration: underline;
+            color: Colors.$blue;
+        }
+        
+        &__navigation{
+            font-size: 3rem;
+            margin-left: auto;
+            &--next,
+            &--prev{
+                width: 2rem;
+                color:lighten(#000000, 80%);
+                
+            }
+            
+        }
+    }
+
+    &__holder{
+        &__cards{
+            max-width: fit-content;
+        }
+    }
+}
+
+
+.dark-bg{
+    background-color: Colors.$back-shadow;
+}

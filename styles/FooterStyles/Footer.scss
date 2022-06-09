@@ -1,0 +1,80 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+.footer{
+    background-color: Colors.$blue;
+    color: Colors.$white;
+    // 
+    .container{
+        padding: 2rem;
+    }
+
+    .upper{
+        @include BREAK.media(sm){
+            @include flex(false,flex-start,space-around);
+        }
+
+    }
+
+    .lower{
+        border-top: 1px solid rgba(Colors.$white, .1);
+        opacity: 0.9;
+        padding: 1rem 2rem;
+        @include BREAK.media(sm){
+            
+            @include flex(false,center,space-between);
+        }
+        
+    }
+
+
+
+    &__slogan{
+        @include flex(false,center);
+        gap: 1rem;
+        i{
+            font-size: 3rem;
+        }
+    }
+
+    &__information,
+    &__clients,
+    &__additionally{
+        margin-top: 4rem;
+        @include BREAK.media(sm){
+            margin-top: 0;
+        }
+        &__links{
+            @include flex(column);
+            margin-top: 2rem;
+            gap: 1rem;
+            
+            a{
+                color: Colors.$white;
+                &:hover{
+                    color: Colors.$orange
+                }
+            }
+        }
+    }
+
+    &__social{
+        margin-top: 4rem;
+        @include BREAK.media(sm){
+            margin-top: 0;
+        }
+        &__media{
+            margin-top: 2rem;
+            @include flex(false);
+            gap: 1rem;
+            i{
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+
+}

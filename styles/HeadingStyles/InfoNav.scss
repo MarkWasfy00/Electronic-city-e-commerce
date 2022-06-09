@@ -1,0 +1,116 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+%roundIcon {
+    @include flex(false,center,center);
+    background-color: Colors.$back-shadow;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    i{
+        font-size: 2rem;
+    }
+}
+
+%besideGap {
+    @include flex(false,center);
+    gap: .5rem;
+}
+
+
+
+.info-nav{
+    display: none;
+    @include BREAK.media(sm){
+        display: block;
+    }
+    .container{
+        @include BREAK.media(sm){
+            @include flex(false,center,space-around);
+            padding: 2rem 2rem;
+        }
+    }
+
+    &__slogan{
+        @extend %besideGap;
+        
+        &:hover{
+            cursor: pointer;
+        }
+        &__logo{
+            @extend %roundIcon;
+            i{
+                color:Colors.$blue;
+            }
+        }
+        &__title{
+            &--one{
+                color:Colors.$blue;
+            }
+            &--two{
+                color:lighten(#000000, 80%);
+            }
+        }
+    }
+
+    &__city{
+        @extend %besideGap;
+        &__logo{
+            @extend %roundIcon;
+            i{
+                color:Colors.$orange;
+            }
+        }
+        &__title{
+            &--one{
+                color:lighten(#000000, 80%);
+            }
+            &--two{
+                border-bottom: 1px Colors.$orange solid;
+                padding-bottom: .3rem;
+            }
+        }
+    }
+
+    &__phone{
+        @extend %besideGap;
+        &__logo{
+            @extend %roundIcon;
+            i{
+                color:Colors.$orange;
+            }
+        }
+        &__title{
+            &--one{
+                color:lighten(#000000, 80%);
+            }
+        }
+    }
+
+    &__basket{
+        @extend %besideGap;
+        width: 20rem;
+        &:hover{
+            cursor: pointer;
+        }
+        &__logo{
+            @extend %roundIcon;
+            i{
+                color:Colors.$orange;
+            }
+        }
+        &__title{
+            
+            &--two{
+                color:lighten(#000000, 80%); 
+                border-bottom: 1px solid Colors.$orange;
+                padding-bottom: .3rem;
+            }
+        }
+    }
+
+}
+

@@ -1,0 +1,110 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+@use '../Global/Animation.scss' as *;
+
+.navigation {
+    background-color: Colors.$blue;
+    height: 4rem;
+    transition: 1s;
+    position: sticky;
+    top:0;
+    z-index: 100;
+    
+    .container {
+        @include flex(row-reverse,center,space-between);
+        padding: 0rem 2rem;
+        @include BREAK.media(sm){
+            flex-direction: row;
+        }
+    }
+    
+    &__lists {
+        display: none;
+        @include BREAK.media(sm){
+            @include flex(false);
+            gap: 2rem;
+            li{
+                @include flex(false,center);
+                height: 4rem;
+                padding: 0 1rem;
+                transition: .1s;
+                &:hover{
+                    background-color: Colors.$orange;
+                }
+                a{
+                    color: Colors.$white;
+                }
+            }
+        }
+    }
+
+    &__social-media {
+        height: 4rem;
+        @include flex(false,center)
+        
+    }
+
+    &__mobile-nav {
+        i{
+            font-size: 2rem;
+            color: Colors.$white;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+
+        @include BREAK.media(sm){
+            display: none;
+        }
+    }
+
+    &__mobile-menu{
+        position: absolute;
+        background-color: Colors.$blue;
+        transition: 500ms;
+        top: 4rem;
+        left: 0;
+        width: 0;
+        overflow: hidden;
+        height: 100vh;
+        &__lists{
+            @include flex(column);
+            gap: 2rem;
+            li{
+                padding: 1rem;
+                &:hover:not(:last-child){
+                    background-color: Colors.$orange;
+                }
+                a{
+                    color: Colors.$white;
+                }
+            }
+
+        }
+        
+        @include BREAK.media(sm){
+            display: none;
+        }
+    }
+
+    &__drop-shadow{
+        position: fixed;
+        inset: 4rem 0 0 0;
+        opacity: .5;
+        background-color: black;
+
+        @include BREAK.media(sm){
+            display: none;
+        }
+    }
+    
+}
+
+.mobile-menu--active{
+    animation: slidein .2s forwards ease-out;
+}
+
+.drop-shadow--disactive{
+    display: none !important;
+}

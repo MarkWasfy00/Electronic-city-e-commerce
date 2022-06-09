@@ -1,0 +1,30 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+
+.news-card{
+    max-width: 35rem;
+    background-color: #FDFDFD;
+    @include flex(column);
+    gap: .5rem;
+    border-radius: .5rem;
+    word-spacing: .3rem;
+    &__head{
+        img{
+            border-top-right-radius: .5rem;
+            border-top-left-radius: .5rem;
+            object-fit: cover;
+        }
+    }
+
+    &__history{
+        color: lighten(#000000,80%);
+    }
+
+    &__read-more{
+        color: Colors.$orange;
+    }
+}

@@ -1,0 +1,111 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+
+
+.basket-section{
+    min-height: 60rem;
+    margin-block: 5rem;
+
+    .container{
+        transition: 1s;
+        @include flex(column);
+        gap: 1rem;
+
+        
+    }
+
+    &__title{
+
+    }
+
+    &__body{
+        @include flex(column-reverse);
+        gap: 2rem;
+        
+        @include BREAK.media(sm){
+            flex-direction: row;
+        }
+        &__cart{
+            flex-grow: 1;
+            &__titles{
+                display: none;
+                @include BREAK.media(sm){
+                    @include flex(false,center,space-between);
+                    border-bottom: lighten(#000000,95%) solid 2px;
+                    padding-bottom: 1rem;
+                }
+            }
+            &__holder{
+                @include flex(column);
+                gap: 1rem;
+                padding: 1rem;
+                overflow: auto;
+                height: 50rem;
+                &::-webkit-scrollbar{
+                    background-color: transparent;
+                    width: .5rem;
+                    padding: 5rem;
+                    &-thumb{
+                        background-color: lighten(#000000,95%);
+                        border-radius: 2rem;
+                    }
+                }
+                
+
+                &--not-found{
+                    text-align: center;
+                    justify-self: center;
+                    align-self: center;
+                    margin-block: 20rem;
+                }
+            }
+        }
+
+        &__filter{
+            background-color: lighten(#000000,99%);
+            @include flex(column);
+            height: fit-content;
+            gap: 2rem;
+            padding: 1rem;
+
+            @include BREAK.media(sm){
+                width: 20rem
+            }
+            
+
+            &__payment-method{
+                @include flex(column);
+                gap: 1rem;
+                &--form{
+                    &--option{
+                        @include flex(false,center);
+                        gap: 1rem;
+                    }
+                }
+            }
+
+            &__checkout{
+                // max-width: fit-content;
+                background-color: Colors.$orange;
+                color: Colors.$white;
+                border: none;
+                padding: 1rem;
+                border-radius: .5rem;
+                transition: .5s;
+                &:hover{
+                    background-color: darken(Colors.$orange, 5%);
+                    cursor: pointer;
+                }
+            }
+            
+            .checkout-disabled{
+                background-color: lighten(#000000, 85%);
+                pointer-events: none;
+            }
+        }
+    }
+}

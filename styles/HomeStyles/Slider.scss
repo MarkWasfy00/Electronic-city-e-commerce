@@ -1,0 +1,38 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+.swiper-edit {
+    &__swiper{
+        width: 100%;
+        position: relative;
+        &__swiperslides{
+            
+            width: 100% !important;
+            height: 30rem !important;
+            @include BREAK.media(sm){
+                height: 60rem !important;
+            }
+            &--img{
+                transition: .5s;
+                object-fit: cover;
+                object-position: top center;
+            }
+        }
+
+        .swiper-pagination{
+            background-color: Colors.$orange;
+            max-width: 10rem;
+            border-radius: 2rem;
+            padding: .2rem .3rem;
+            left: 50% !important;
+            transform: translateX(-50%);
+
+            &-bullet{
+                background-color: Colors.$white;
+            }
+        }
+    }
+}

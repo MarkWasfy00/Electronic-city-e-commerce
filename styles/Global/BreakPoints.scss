@@ -1,0 +1,24 @@
+@mixin media($dimension) {
+    @if $dimension == xs {
+        @media (min-width:0rem){   // 750px
+            @content;
+        }
+    }@else if $dimension == sm  {
+        @media (min-width:60rem){   // 970px
+            @content;
+        }
+    }@else if $dimension == md {
+        @media (min-width:90rem){   // 1200px
+            @content;
+        }
+    }@else if $dimension == lg {
+        @media (min-width:120rem){   // 1200px
+            @content;
+        }
+    }@else if $dimension == xl {
+        @media (min-width:153.6rem){   // 1200px
+            @content;
+        }
+    }
+    
+}

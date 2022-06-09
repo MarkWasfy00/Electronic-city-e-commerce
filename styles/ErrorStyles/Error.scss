@@ -1,0 +1,45 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+.error-page{
+    .container{
+        @include flex(column,center,center);
+        gap: 1rem;
+        text-align: center;
+        min-height: 60vh;
+    }
+
+    &__title{
+        @include flex(false,center,center);
+        gap: .5rem;
+        color: Colors.$orange;
+        
+
+        &--two{
+            background-color: lighten(#000000, 98%);
+            border-radius: 50%;
+            font-size: 4rem;
+            padding: 1rem;
+        }
+    }
+
+    &__sub-title{
+        max-width: 30rem;
+    }
+
+    &__sub-paragraph{
+        max-width: 40rem;
+    }
+
+    &__btn{
+        background-color: Colors.$orange;
+        border-radius: .5rem;
+        padding: 1rem 4rem;
+        color: Colors.$white;
+        // max-width: 35rem;
+        // align-self: center;
+    }
+}

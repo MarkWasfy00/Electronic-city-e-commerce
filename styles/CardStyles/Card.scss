@@ -1,0 +1,104 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+@use '../Global/Animation.scss' as *;
+
+
+.card{
+    border: 1px lighten(#000000, 90%) solid;
+    max-width: fit-content;
+    height: 46rem;
+    position: relative;
+    @include flex(column);
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 30rem;
+
+    &:hover{
+        border: 1px Colors.$orange solid;
+        cursor: pointer;
+    }
+
+    
+
+    &__stock{
+        @include flex(false,center,space-between);
+
+        i{
+            font-size: 1.4rem;
+        }
+    }
+    &__info{
+        &__id{
+            color: Colors.$orange;
+        }
+        &__title{
+            max-width: 20rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &__rating{
+            @include flex(false,center,space-between);
+            &__reviews{
+                @include flex(false,center);
+                gap: .5rem;
+                color: lighten(#000000, 70%);
+                &__total{
+                    text-decoration-line: underline;
+                    text-decoration-style: dashed;
+                    color: lighten(#000000, 70%);
+                }
+            }
+        }
+    }
+    &__footer{
+        @include flex(false,center,space-between);
+        &__cta{
+            background-color: Colors.$orange;
+            border: none;
+            color: Colors.$white;
+            padding: .7rem 1.3rem;
+            border-radius: .5rem;
+            transition: 500ms;
+            &:hover{
+                background-color: darken(Colors.$orange, 5%);
+                cursor: pointer;
+            }
+        }
+    }
+    
+    &__tags{
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        @include flex(column);
+        gap: .5rem;
+
+        &__promotion{
+            background-color: Colors.$orange;
+        }
+        &__new-product{
+            background-color: Colors.$blue;
+        }
+
+        &__promotion,
+        &__new-product{
+            color: Colors.$white;
+            padding: .5rem 1rem;
+            width: 13rem;
+            height: 2rem;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            animation: ShineAnimation 5s infinite cubic-bezier(.12,.89,.98,.47);
+        }
+    }
+
+    
+}
+
+.card__footer__cta--disabled {
+    background-color: lighten(#000000, 78%);
+    pointer-events:none;
+}
+

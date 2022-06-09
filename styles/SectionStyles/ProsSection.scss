@@ -1,0 +1,30 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+.pros-section{
+    .container{
+        @include flex(column,flex-start);
+        @include BREAK.media(sm){
+            flex-direction: row;
+            
+        }
+    }
+
+    &__pricing,
+    &__team,
+    &__experince,
+    &__shipping{
+        // max-width: 26rem;
+
+        @include flex(column);
+        gap: .3rem;
+        flex-grow: 1;
+        padding: 1rem;
+        i{
+            font-size: 2.4rem;
+            color: Colors.$blue;
+        }
+    }
+}

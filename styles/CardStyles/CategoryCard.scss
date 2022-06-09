@@ -1,0 +1,24 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+
+.category-card{
+    background-color: lighten(#000000,98%);
+    width: fit-content;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 2rem 0;
+    border: 1px Colors.$white solid;
+    transition: .5s;
+
+    &:hover{
+        border: 1px Colors.$orange solid;
+        cursor: pointer;
+    }
+
+   
+}

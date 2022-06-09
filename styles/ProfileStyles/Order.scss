@@ -1,0 +1,44 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+
+.order{
+           
+    border: 1px lighten(#000000, 95%) solid;
+    padding: 1rem;
+    
+    @include flex(column);
+    gap: .5rem;
+    &__info{
+        @include flex(false,center,space-between)
+    }
+    &__name{
+        
+    }
+    &__type{
+        @include flex(column);
+        gap: .5rem;
+        @include BREAK.media(sm){
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__name{
+            max-width: 25rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &__info{
+            @include flex(false);
+            gap: 1rem;
+        }
+    }
+    &__total{
+        text-align: center;
+    }
+}

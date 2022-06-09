@@ -1,0 +1,46 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+
+.success-page{
+
+
+    .container{
+
+    }
+
+
+    &__verify{
+        @include flex(column,center,center);
+        gap: 2rem;
+        height: 55rem;
+
+        i{
+            font-size: 10rem;
+            color: Colors.$orange;
+        }
+
+        &__paragraph{
+            max-width: 50%;
+            text-align: center;
+            margin: 0;
+        }
+
+        &__back{
+            border: none;
+            padding: 1rem;
+            border-radius: .5rem;
+            background-color: Colors.$orange;
+            color: Colors.$white;
+            transition: .5s;
+            &:hover{
+                background-color: darken(Colors.$orange, 5%);
+                cursor: pointer;
+            }
+        }
+    }
+
+}

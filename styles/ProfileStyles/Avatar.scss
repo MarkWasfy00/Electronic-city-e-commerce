@@ -1,0 +1,39 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+.avatar-section{
+    .container{
+
+    }
+
+    &__holder{
+        @include flex(false,center);
+        gap: 1rem;
+        &__avatar{
+            width: 10rem;
+            transition: .5s;
+            @include BREAK.media(sm){
+                width: 15rem;
+            }
+            img{
+                border: 1px Colors.$orange solid;
+                width: 100%;
+                border-radius: 50%;
+                
+            }
+        }
+
+        &__info{
+            @include flex(column);
+            gap: .2rem;
+
+            &__logout{
+                cursor: pointer;
+            }
+        }
+
+    }
+}

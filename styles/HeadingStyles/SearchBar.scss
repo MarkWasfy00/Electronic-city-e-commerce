@@ -1,0 +1,158 @@
+@use '../Global/Colors.scss' as Colors ;
+@use '../Global/mixins/Flex.scss' as *;
+@use '../Global/BreakPoints.scss' as BREAK;
+
+
+
+.search-bar{
+    background-color: Colors.$back-shadow;
+    @include BREAK.media(sm){
+        background-color: Colors.$blue;
+        
+    }
+
+    &__form{
+        @include flex(false,center);
+        gap: .5rem;
+        @include BREAK.media(sm){
+            gap: 0;
+        }
+        &__catalog{
+            @include flex(false,center);
+            z-index: 4;
+            background-color: Colors.$orange;
+            padding: 1rem;
+            border-radius: 1rem;
+            transition: .3s;
+
+            &:hover{
+                cursor: pointer;
+                background-color: darken(Colors.$orange,5%);
+            }
+
+            @include BREAK.media(sm){
+                gap: 2rem;
+                padding: 1rem 2rem;
+                width: 20rem;
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+                
+                margin-left: -1rem;
+            }
+            
+            i{
+                font-size: 2rem;
+                color: Colors.$white;
+            }
+
+            &--title{
+                display: none;
+                @include BREAK.media(sm){
+                    display: block;
+                    color: Colors.$white;
+                }
+            }
+        }
+
+        &__search{
+            flex-grow: 1;
+            position: relative;
+            z-index: 2;
+            @include flex(false);
+            &__input{
+                border: 1px Colors.$blue solid;
+                height: 2.5rem;
+                width: 100%;
+                border-radius: .5rem;
+                padding: .5rem 1rem;
+                @include BREAK.media(sm){
+                    height: 4rem;
+                    border-bottom-left-radius: 0;
+                    border-top-left-radius: 0;
+                    padding: 0 2rem;
+                }
+    
+                &:active,
+                &:focus,
+                &:hover{
+                    // border: 1px Colors.$orange solid;
+                    outline: none;
+                }
+            }
+            &__find{
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -15rem;
+                height: 4rem;
+                display: none;
+                height:15rem;
+                overflow: auto;
+                &:hover{
+                    display: block
+                }
+                &::-webkit-scrollbar{
+                    background-color: white;
+                    width: .5rem;
+                    padding: 5rem;
+                    &-thumb{
+                        background-color: lighten(#000000,95%);
+                        border-radius: 2rem;
+                    }
+                }
+                &__item{
+                    @include flex(false,center,false);
+                    padding: 1rem;
+                    background-color: white;
+                    height: 2rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    
+                    &:hover{
+                        background-color: Colors.$orange;
+                        color: Colors.$white;
+                        cursor: pointer;
+                        
+                    }
+                    
+                }
+                
+                @include BREAK.media(sm){
+                    right:4rem;
+                   
+                }
+                
+            }
+
+            &__input:focus + &__find{
+                display: block;
+            }
+        }
+
+
+        &__button{
+            @include flex(false,center);
+            order: 3;
+            z-index: 3;
+            gap: 1rem;
+            padding: 1rem 1rem;
+            background-color: Colors.$orange;
+            border: none;
+            border-radius: .5rem;
+            color: Colors.$white;
+            @include BREAK.media(sm){
+                padding: 1.2rem;
+                margin-left: -5rem;
+                border-bottom-left-radius: 1rem;
+                border-top-left-radius: 1rem;
+            }
+            &:hover{
+                cursor: pointer;
+                background-color: lighten(Colors.$orange, 5%);
+            }
+        }
+
+    }
+}
+
