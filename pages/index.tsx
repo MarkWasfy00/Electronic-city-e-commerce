@@ -39,8 +39,7 @@ export default Home
 
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const baseUrl = 'http://localhost:3000/'
-  const getData = await axios.get( baseUrl + "api/Products")
+  const getData = await axios.get( process.env.HOST + "/api/Products")
   const Phones = await getData.data.filter((product:ProductType) => product.Type == 'Phone')
   return {
     props:{
