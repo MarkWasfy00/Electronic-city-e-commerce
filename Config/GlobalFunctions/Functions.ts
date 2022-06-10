@@ -2,7 +2,7 @@ import { fromUnixTime,formatDistanceToNowStrict, isValid, isPast } from 'date-fn
 
 
 export function getDiscount(num:number|null,totalPrice:number){
-    const promotion = num ? parseFloat(`0.${num}`) : 0;
+    const promotion = num && num < 10 ? parseFloat(`0.0${num}`) : num > 10 ?  parseFloat(`0.${num}`) : 0 ;
     const price = totalPrice;
     const discount = price * promotion;
     const newPrice = Math.floor(price - discount);
