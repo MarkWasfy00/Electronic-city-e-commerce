@@ -27,8 +27,7 @@ const Basket:NextPage<{items:ProductType[]}> = ({items}) => {
 export default Basket
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const baseUrl = 'http://localhost:3000/'
-  const getData = await axios.get( baseUrl + "api/Products")
+  const getData = await axios.get( process.env.HOST + "/api/Products")
   const items = await getData.data
 
   return {
