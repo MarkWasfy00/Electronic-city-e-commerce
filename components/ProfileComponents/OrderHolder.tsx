@@ -1,9 +1,10 @@
-import  Avatar  from './Avatar'
-import { OrderArray } from "../../Config/Types/OrderTypes"
-import Order from "./Order"
-import Link from 'next/link'
+import  Avatar  from './Avatar';
+import Order from "./Order";
+import Link from 'next/link';
 
+import { OrderArray } from "../../Config/Types/OrderTypes";
 
+//checked
 
 type OrderHolderProps = {
     children:OrderArray
@@ -22,7 +23,7 @@ const OrderHolder = ({children}:OrderHolderProps) => {
                         <i className="fa-solid fa-dolly"></i>
                         <div className="link-l">No orders yet</div>
                         <Link passHref href='/catalog'>
-                            <button className='order-holder__container__no-items--btn link-s'>Make your first order</button>
+                            <button className='order-holder__container__no-items__btn link-s'>Make your first order</button>
                         </Link>
                     </div>
                 }

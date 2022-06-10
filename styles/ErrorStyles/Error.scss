@@ -9,7 +9,7 @@
         @include flex(column,center,center);
         gap: 1rem;
         text-align: center;
-        min-height: 60vh;
+        min-height: 60rem;
     }
 
     &__title{
@@ -18,16 +18,16 @@
         color: Colors.$orange;
         
 
-        &--two{
-            background-color: lighten(#000000, 98%);
+        &__two{
+            background-color: Colors.$back-shadow-500;
             border-radius: 50%;
             font-size: 4rem;
-            padding: 1rem;
+            padding: 1.5rem;
         }
     }
 
     &__sub-title{
-        max-width: 30rem;
+        // max-width: 30rem;
     }
 
     &__sub-paragraph{
@@ -39,7 +39,5 @@
         border-radius: .5rem;
         padding: 1rem 4rem;
         color: Colors.$white;
-        // max-width: 35rem;
-        // align-self: center;
     }
 }

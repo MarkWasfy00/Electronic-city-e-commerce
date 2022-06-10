@@ -5,22 +5,17 @@
 
 
 .card{
-    border: 1px lighten(#000000, 90%) solid;
-    max-width: fit-content;
-    height: 46rem;
-    position: relative;
     @include flex(column);
     gap: 2rem;
+    border: 1px lighten(#000000, 90%) solid;
+    height: 46rem;
+    position: relative;
     padding: 1rem;
-    max-width: 30rem;
 
     &:hover{
         border: 1px Colors.$orange solid;
         cursor: pointer;
     }
-
-    
-
     &__stock{
         @include flex(false,center,space-between);
 
@@ -61,13 +56,19 @@
             padding: .7rem 1.3rem;
             border-radius: .5rem;
             transition: 500ms;
+
             &:hover{
                 background-color: darken(Colors.$orange, 5%);
                 cursor: pointer;
             }
+
+            &--disabled {
+                background-color: lighten(#000000, 78%);
+                pointer-events:none;
+            }
+            
         }
     }
-    
     &__tags{
         position: absolute;
         top: 4rem;
@@ -93,12 +94,6 @@
             animation: ShineAnimation 5s infinite cubic-bezier(.12,.89,.98,.47);
         }
     }
-
-    
 }
 
-.card__footer__cta--disabled {
-    background-color: lighten(#000000, 78%);
-    pointer-events:none;
-}
 

@@ -5,12 +5,11 @@
 
 
 .basket-card{
-    border: 1px lighten(#000000,95%) solid;
+    border: 1px Colors.$back-shadow-500 solid;
     @include flex(column);
     gap: 1rem;
     max-height: fit-content;
     padding: 1rem 2rem;
-    
     &__remove{
         i{
             color: Colors.$orange;
@@ -18,8 +17,6 @@
             cursor: pointer;
         }
     }
-
-
     &__holder{
         @include flex(column,center,center);
         gap: 2rem;
@@ -37,7 +34,7 @@
         }
 
         &__title{
-            &--name{
+            &__name{
                 max-width: 30rem;
                 margin-bottom: .2rem;
                 overflow: hidden;
@@ -46,32 +43,32 @@
                 -webkit-box-orient: vertical;
                 
             }
-            &--id{
+            &__id{
                 color: Colors.$orange;
             }
         }
 
         &__counter{
             @include flex(false,center);
-            color: lighten(#000000, 80%);
+            color: Colors.$back-shadow-2000;
             @include BREAK.media(sm){
                 margin-left: auto;
             }
             
 
-            &--count{
+            &__count{
                 @include flex(false,center,center);
-                border-top: 1px lighten(#000000, 80%) solid;
-                border-bottom: 1px lighten(#000000, 80%) solid;
+                border-top: 1px Colors.$back-shadow-2000 solid;
+                border-bottom: 1px Colors.$back-shadow-2000 solid;
                 width: 8rem;
                 height: 3rem;
                 padding: .3rem;
             }
 
-            &--add,
-            &--subtract{
+            &__add,
+            &__subtract{
                 @include flex(false,flex-start,center);
-                border: 1px lighten(#000000, 80%) solid;
+                border: 1px Colors.$back-shadow-2000 solid;
                 padding: .3rem;
                 width: 3rem;
                 height: 3rem;

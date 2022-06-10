@@ -1,6 +1,4 @@
-import React from 'react'
-
-
+// checked
 
 type CategorySectionProps = {
   children:React.ReactNode[]

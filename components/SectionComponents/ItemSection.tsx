@@ -1,10 +1,10 @@
-import React from 'react'
-import { ProductType } from '../../Config/Types/ApiTypes'
-import { Rating } from '@mui/material'
-import { useAppDispatch } from '../../redux/Hooks/Hooks'
-import { addItem } from '../../redux/Basket/Basket'
-import { getDiscount } from '../../Config/GlobalFunctions/Functions'
-import Image from 'next/image'
+import { useState } from 'react';
+import { ProductType } from '../../Config/Types/ApiTypes';
+import { Rating } from '@mui/material';
+import { useAppDispatch } from '../../redux/Hooks/Hooks';
+import { addItem } from '../../redux/Basket/Basket';
+import { getDiscount } from '../../Config/GlobalFunctions/Functions';
+import Image from 'next/image';
 
 
 
@@ -18,9 +18,9 @@ type ItemSectionProps = {
 
 
 const ItemSection = ({children}:ItemSectionProps) => {
-    const [imgChange,setImgChange] = React.useState(0)
-    const [infoSwipe,setInfoSwipe] = React.useState('description')
-    const dispatch = useAppDispatch()
+    const [imgChange,setImgChange] = useState(0);
+    const [infoSwipe,setInfoSwipe] = useState('description');
+    const dispatch = useAppDispatch();
 
 
     function getBrief(items:ProductType){
@@ -37,7 +37,7 @@ const ItemSection = ({children}:ItemSectionProps) => {
         }
         return breifArray
         
-    }
+    };
     
 
   return (
@@ -47,26 +47,26 @@ const ItemSection = ({children}:ItemSectionProps) => {
             <div className="item-section__body">
                  <div className="item-section__body__view">
                      <div className="item-section__body__view__upper">
-                         <div className="item-section__body__view__upper--left-image">
+                         <div className="item-section__body__view__upper__left-image">
                              {
                                  children.Images.map((img,indx) => <Image onClick={() => setImgChange(indx)} width={70} height={50} className={`left-image ${imgChange == indx ? ' left-image-active':''}`} key={indx} alt={img} src={img} />)
                              }
                              
                          </div>
-                         <div className="item-section__body__view__upper--main-image">
+                         <div className="item-section__body__view__upper__main-image">
                              <Image className='main-image' src={children.Images[imgChange]} alt={children.Images[imgChange]} height={400} width={500} />
                          </div>
                      </div>
                      <div className="item-section__body__view__lower">
-                         <div className="item-section__body__view__lower--price">
-                             <div className="item-section__body__view__lower--price-cash">
+                         <div className="item-section__body__view__lower__price">
+                             <div className="item-section__body__view__lower__price-cash">
                                 <del className={`link-l-bold${children.Promotion ? '':' disactive'}`}>{children.Curr}{children.Price}</del>
                                 <div className="link-l-bold">{children.Curr}{getDiscount(children.Promotion,children.Price).newPrice}</div>
                              </div>
                              <div className="link-id lower-price-id">PC-{children.Id.slice(0, 5)}</div>
                          </div>
-                         <div className="item-section__body__view__lower--cta">
-                             <button onClick={() => dispatch(addItem({item:children.Id,price:getDiscount(children.Promotion,children.Price).newPrice}))} className={`link-s${children.Stock <= 0 ? ' cta--disabled':''}`}>Add to cart</button>
+                         <div className="item-section__body__view__lower__cta">
+                             <button onClick={() => dispatch(addItem({item:children.Id,price:getDiscount(children.Promotion,children.Price).newPrice}))} className={`item-section__body__view__lower__cta__btn link-s${children.Stock <= 0 ? ' item-section__body__view__lower__cta__btn--disabled':''}`}>Add to cart</button>
                              <Rating name="simple-controlled"/>
                          </div>
                      </div>

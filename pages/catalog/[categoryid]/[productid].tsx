@@ -4,9 +4,11 @@ import type { NextPage } from 'next';
 import { ProductType } from '../../../Config/Types/ApiTypes';
 import axios from 'axios';
 import ItemSection from '../../../components/SectionComponents/ItemSection';
+import { useRouter } from 'next/router';
 
 
 const ProductId:NextPage<{item:ProductType}> = ({item}) => {
+  
   return (
     <main>
       <ItemSection>{item}</ItemSection>

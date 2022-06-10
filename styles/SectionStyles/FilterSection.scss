@@ -6,14 +6,6 @@
 .filter-section{
     margin-block: 5rem;
 
-    .container{
-        
-    }
-
-    &__head{
-
-    }
-
     &__body{
         @include flex(column);
         gap: 1rem;
@@ -26,11 +18,11 @@
             min-width: 15rem;
             padding: 1rem;
             border-radius: 1rem;
-            background-color: lighten(#000000, 98%);
+            background-color: Colors.$back-shadow-200;
             @include flex(column);
             gap: 2rem;
 
-            &--price{
+            &__price{
                 .slider{
                     @include flex(false,center,space-between);
                     gap: 1rem;
@@ -39,7 +31,7 @@
                     }
                 }
             }
-            &--brand{
+            &__brand{
                 @include flex(column);
                 gap: 1rem;
                 .brand-type{

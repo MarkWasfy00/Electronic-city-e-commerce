@@ -13,7 +13,7 @@
     }
 
     &__title{
-        border-bottom: lighten(#000000, 90%) solid 1px;
+        border-bottom: Colors.$back-shadow-1000 solid 1px;
     }
 
     &__container{
@@ -30,7 +30,7 @@
                 font-size: 4rem;
             }
             
-            &--btn{
+            &__btn{
                 border: none;
                 padding: 1rem;
                 background-color: Colors.$orange;

@@ -10,16 +10,12 @@
     min-height: 60rem;
     margin-block: 5rem;
 
-    .container{
+    & .container{
         transition: 1s;
         @include flex(column);
         gap: 1rem;
 
         
-    }
-
-    &__title{
-
     }
 
     &__body{
@@ -50,13 +46,13 @@
                     width: .5rem;
                     padding: 5rem;
                     &-thumb{
-                        background-color: lighten(#000000,95%);
+                        background-color: Colors.$back-shadow-500;
                         border-radius: 2rem;
                     }
                 }
                 
 
-                &--not-found{
+                &__not-found{
                     text-align: center;
                     justify-self: center;
                     align-self: center;
@@ -66,7 +62,7 @@
         }
 
         &__filter{
-            background-color: lighten(#000000,99%);
+            background-color: Colors.$back-shadow-100;
             @include flex(column);
             height: fit-content;
             gap: 2rem;
@@ -80,9 +76,10 @@
             &__payment-method{
                 @include flex(column);
                 gap: 1rem;
-                &--form{
-                    &--option{
+                &__form{
+                    &__option{
                         @include flex(false,center);
+                        opacity: .3;
                         gap: 1rem;
                     }
                 }
@@ -103,7 +100,7 @@
             }
             
             .checkout-disabled{
-                background-color: lighten(#000000, 85%);
+                background-color: Colors.$back-shadow-1500;
                 pointer-events: none;
             }
         }

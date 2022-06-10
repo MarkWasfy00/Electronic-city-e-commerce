@@ -1,7 +1,8 @@
-import React from 'react'
-import { ProductType } from '../../Config/Types/ApiTypes'
-import Card from '../CardComponents/Card'
+import { ProductType } from '../../Config/Types/ApiTypes';
+import Card from '../CardComponents/Card';
+import {useState} from 'react';
 
+//checked
 
 type FilterSectionProps = {
     children:Array<ProductType>
@@ -11,17 +12,19 @@ type FilterSectionProps = {
 
 const FilterSection = ({children}:FilterSectionProps) => {
 
-    const [slider,setSlider] = React.useState(50000)
-    const [filterBrand,setFilterBrand] = React.useState('all')
-
-
+    const [slider,setSlider] = useState(50000);
+    const [filterBrand,setFilterBrand] = useState('all');
 
     
+    function isRadioSelected(value:string):boolean {
+        return value === filterBrand;
+    };
+
     function getBrandsFromData(array:ProductType[]):string[]{
-        let brands:string[] = []
-        array.map(item => brands.includes(item.Brand) == true ? '':brands.push(item.Brand))
-        return brands
-    }
+        let brands:string[] = [];
+        array.map(item => brands.includes(item.Brand) == true ? '':brands.push(item.Brand));
+        return brands;
+    };
     
     function filterChecker(array:ProductType[]){
         const childrenFilter = array.filter(items => {
@@ -29,10 +32,10 @@ const FilterSection = ({children}:FilterSectionProps) => {
                 return items
             } else if (items.Price <= slider && filterBrand == items.Brand){
                 return items
-            }
+            };
         })
-        return childrenFilter
-    }
+        return childrenFilter;
+    };
     
 
   return (
@@ -41,7 +44,7 @@ const FilterSection = ({children}:FilterSectionProps) => {
             <div className="filter-section__head headline-l">{children[0].Category}</div>
             <div className="filter-section__body">
                 <div className="filter-section__body__filter">
-                    <div className="filter-section__body__filter--price">
+                    <div className="filter-section__body__filter__price">
                         <div className="title link-s">Price</div>
                         <input type="range" min="0" max="50000" step='1000' value={slider} onChange={(e) => setSlider(+e.target.value)} className="slider-track"/>
                         <div className="slider">
@@ -49,15 +52,15 @@ const FilterSection = ({children}:FilterSectionProps) => {
                             <div className="link-s">{slider}£</div>
                         </div>
                     </div>
-                    <div className={`filter-section__body__filter--brand link-s`}>
+                    <div className={`filter-section__body__filter__brand link-s`}>
                         <div className="brand-type">
-                                <input onChange={(e) => setFilterBrand(e.target.value) } type="radio" value='all' name="brand" />
+                                <input onChange={(e) => setFilterBrand(e.target.value) } type="radio" value='all' checked={isRadioSelected('all')} name="brand" />
                                 <div>All</div>
                             </div>
                             {
                                 getBrandsFromData(children).map(brand => (
                                     <div key={brand} className="brand-type">
-                                        <input onChange={(e) => setFilterBrand(e.target.value) } type="radio" value={brand} name="brand" />
+                                        <input onChange={(e) => setFilterBrand(e.target.value) } type="radio" value={brand} checked={isRadioSelected(`${brand}`)} name="brand" />
                                         <div>{brand}</div>
                                     </div>
                                 ))

@@ -15,14 +15,13 @@
         &__avatar{
             width: 10rem;
             transition: .5s;
+            
             @include BREAK.media(sm){
                 width: 15rem;
             }
             img{
-                border: 1px Colors.$orange solid;
-                width: 100%;
                 border-radius: 50%;
-                
+                width: 100% !important;
             }
         }
 

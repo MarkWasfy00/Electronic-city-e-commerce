@@ -1,12 +1,12 @@
-import React from 'react'
+import Image from 'next/image';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination,Scrollbar,Autoplay } from 'swiper';
-import Image from 'next/image';
+
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-
+//checked
 
 const Slider = () => {
 
@@ -37,7 +37,7 @@ const Slider = () => {
         {
           images.map((img) => (
             <SwiperSlide key={img} className='swiper-edit__swiper__swiperslides'>
-              <Image className='swiper-edit__swiper__swiperslides--img' alt='slider' layout='fill' src={img}  />
+              <Image className='swiper-edit__swiper__swiperslides__img' alt='slider' layout='fill' src={img}  />
             </SwiperSlide>
           ))
         }

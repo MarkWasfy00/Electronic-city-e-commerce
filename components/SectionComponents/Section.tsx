@@ -1,10 +1,11 @@
-import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
+import { useRef } from 'react';
+//------
 import 'swiper/css/navigation';
 
 
-
+//checked
 
 type SectionProps = {
     sectionName: string
@@ -15,20 +16,19 @@ type SectionProps = {
 
 
 const Section = ({sectionName,isDarkBg,gap,children}:SectionProps) => {
-
-    let nextBtn = React.useRef<any>(null)
-    let prevBtn = React.useRef<any>(null)
+    let nextBtn = useRef<any>(null);
+    let prevBtn = useRef<any>(null);
 
 
   return (
-    <section className={`section ${isDarkBg ? ' dark-bg': ''}`}>
+    <section className={`section ${isDarkBg ? ' section--dark-bg': ''}`}>
         <div className="container">
             <div className="section__header">
                 <div className="section__header__title headline-s">{sectionName}</div>
                 {/* <a href="#" className='section__header__link link-s'>View all</a> */}
                 <div className="section__header__navigation">
-                    <i className="section__header__navigation--prev fa-solid fa-chevron-left" ref={prevBtn}></i>
-                    <i className="section__header__navigation--next fa-solid fa-chevron-right" ref={nextBtn}></i>
+                    <i className="section__header__navigation__prev fa-solid fa-chevron-left" ref={prevBtn}></i>
+                    <i className="section__header__navigation__next fa-solid fa-chevron-right" ref={nextBtn}></i>
                 </div>
             </div>
             <Swiper className="section__holder"
@@ -51,7 +51,7 @@ const Section = ({sectionName,isDarkBg,gap,children}:SectionProps) => {
             >
              {
                  children.map((Card,key) => {
-                     return <SwiperSlide className='section__holder__cards' key={key}>{Card}</SwiperSlide>
+                     return <SwiperSlide className='section__holder__card' key={key}>{Card}</SwiperSlide>
                  })
              }   
             </Swiper>

@@ -1,6 +1,6 @@
 import { getSession } from '@auth0/nextjs-auth0';
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
-import { getFirestore,collection,getDocs,orderBy,query } from '../Config/Firebase/FirebaseFunc'
+import { getFirestore,collection,getDocs,orderBy,query } from '../Config/Firebase/FirebaseFunc';
 import type { NextPage } from 'next';
 import OrderHolder from '../components/ProfileComponents/OrderHolder';
 

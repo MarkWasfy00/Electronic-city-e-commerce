@@ -7,16 +7,13 @@
 
 .order{
            
-    border: 1px lighten(#000000, 95%) solid;
+    border: 1px Colors.$back-shadow-500 solid;
     padding: 1rem;
     
     @include flex(column);
     gap: .5rem;
     &__info{
         @include flex(false,center,space-between)
-    }
-    &__name{
-        
     }
     &__type{
         @include flex(column);

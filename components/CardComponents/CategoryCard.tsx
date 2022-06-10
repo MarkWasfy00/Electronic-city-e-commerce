@@ -1,13 +1,12 @@
-
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+
+// checked
 
 type CategoryCardProps = {
   brand:string
   image:string
 }
-
-
 
 const CategoryCard = ({brand,image}:CategoryCardProps) => {
   const router = useRouter()

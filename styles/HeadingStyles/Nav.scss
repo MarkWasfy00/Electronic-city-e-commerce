@@ -6,12 +6,12 @@
 .navigation {
     background-color: Colors.$blue;
     height: 4rem;
-    transition: 1s;
+    transition: .2s;
     position: sticky;
     top:0;
     z-index: 100;
     
-    .container {
+    & .container {
         @include flex(row-reverse,center,space-between);
         padding: 0rem 2rem;
         @include BREAK.media(sm){
@@ -86,25 +86,26 @@
         @include BREAK.media(sm){
             display: none;
         }
+
+        &--active{
+            animation: slidein .2s forwards ease-out;
+        }
+        
     }
 
     &__drop-shadow{
         position: fixed;
         inset: 4rem 0 0 0;
         opacity: .5;
-        background-color: black;
+        background-color: Colors.$black;
 
         @include BREAK.media(sm){
             display: none;
         }
+
+        &--disactive{
+            display: none !important;
+        }
     }
     
-}
-
-.mobile-menu--active{
-    animation: slidein .2s forwards ease-out;
-}
-
-.drop-shadow--disactive{
-    display: none !important;
 }

@@ -9,14 +9,12 @@
         width: 100%;
         position: relative;
         &__swiperslides{
-            
             width: 100% !important;
             height: 30rem !important;
             @include BREAK.media(sm){
                 height: 60rem !important;
             }
-            &--img{
-                transition: .5s;
+            &__img{
                 object-fit: cover;
                 object-position: top center;
             }

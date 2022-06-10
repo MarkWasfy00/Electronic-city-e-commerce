@@ -5,7 +5,7 @@
 
 
 .search-bar{
-    background-color: Colors.$back-shadow;
+    background-color: Colors.$back-shadow-100;
     @include BREAK.media(sm){
         background-color: Colors.$blue;
         
@@ -23,29 +23,26 @@
             background-color: Colors.$orange;
             padding: 1rem;
             border-radius: 1rem;
-            transition: .3s;
-
-            &:hover{
-                cursor: pointer;
-                background-color: darken(Colors.$orange,5%);
-            }
-
+            transition: .2s;
+            
             @include BREAK.media(sm){
                 gap: 2rem;
                 padding: 1rem 2rem;
                 width: 20rem;
                 border-bottom-right-radius: 0;
                 border-top-right-radius: 0;
-                
-                margin-left: -1rem;
+                // margin-left: -1rem;
             }
-            
+
+            &:hover{
+                cursor: pointer;
+                background-color: darken(Colors.$orange,5%);
+            }
             i{
                 font-size: 2rem;
                 color: Colors.$white;
             }
-
-            &--title{
+            &__title{
                 display: none;
                 @include BREAK.media(sm){
                     display: block;
@@ -60,7 +57,7 @@
             z-index: 2;
             @include flex(false);
             &__input{
-                border: 1px Colors.$blue solid;
+                border: none;
                 height: 2.5rem;
                 width: 100%;
                 border-radius: .5rem;
@@ -75,7 +72,6 @@
                 &:active,
                 &:focus,
                 &:hover{
-                    // border: 1px Colors.$orange solid;
                     outline: none;
                 }
             }
@@ -88,29 +84,33 @@
                 display: none;
                 height:15rem;
                 overflow: auto;
+                
+                
                 &:hover{
                     display: block
                 }
                 &::-webkit-scrollbar{
-                    background-color: white;
+                    background-color: Colors.$white;
                     width: .5rem;
                     padding: 5rem;
                     &-thumb{
-                        background-color: lighten(#000000,95%);
+                        background-color: Colors.$back-shadow-1500;
                         border-radius: 2rem;
                     }
                 }
                 &__item{
-                    @include flex(false,center,false);
+                    background-color: Colors.$back-shadow-300;
                     padding: 1rem;
-                    background-color: white;
                     height: 2rem;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                    &__text{
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        max-width: 100%;
+                    }
                     
                     &:hover{
-                        background-color: Colors.$orange;
+                        background-color: Colors.$blue;
                         color: Colors.$white;
                         cursor: pointer;
                         
@@ -141,6 +141,7 @@
             border: none;
             border-radius: .5rem;
             color: Colors.$white;
+            transition: .2s;
             @include BREAK.media(sm){
                 padding: 1.2rem;
                 margin-left: -5rem;
@@ -149,7 +150,7 @@
             }
             &:hover{
                 cursor: pointer;
-                background-color: lighten(Colors.$orange, 5%);
+                background-color: darken(Colors.$orange, 5%);
             }
         }
 

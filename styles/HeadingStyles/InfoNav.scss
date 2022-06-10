@@ -6,7 +6,7 @@
 
 %roundIcon {
     @include flex(false,center,center);
-    background-color: Colors.$back-shadow;
+    background-color: Colors.$back-shadow-100;
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -27,7 +27,7 @@
     @include BREAK.media(sm){
         display: block;
     }
-    .container{
+    & .container{
         @include BREAK.media(sm){
             @include flex(false,center,space-around);
             padding: 2rem 2rem;
@@ -47,11 +47,11 @@
             }
         }
         &__title{
-            &--one{
+            &__one{
                 color:Colors.$blue;
             }
-            &--two{
-                color:lighten(#000000, 80%);
+            &__two{
+                color:Colors.$back-shadow-2000;
             }
         }
     }
@@ -65,10 +65,10 @@
             }
         }
         &__title{
-            &--one{
-                color:lighten(#000000, 80%);
+            &__one{
+                color:Colors.$back-shadow-2000;
             }
-            &--two{
+            &__two{
                 border-bottom: 1px Colors.$orange solid;
                 padding-bottom: .3rem;
             }
@@ -84,8 +84,8 @@
             }
         }
         &__title{
-            &--one{
-                color:lighten(#000000, 80%);
+            &__one{
+                color:Colors.$back-shadow-2000;
             }
         }
     }
@@ -104,8 +104,8 @@
         }
         &__title{
             
-            &--two{
-                color:lighten(#000000, 80%); 
+            &__two{
+                color:Colors.$back-shadow-2000; 
                 border-bottom: 1px solid Colors.$orange;
                 padding-bottom: .3rem;
             }

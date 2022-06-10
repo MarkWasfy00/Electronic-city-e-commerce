@@ -7,6 +7,7 @@ import axios from 'axios';
 
 
 import BasketSection from '../components/SectionComponents/BasketSection';
+import { useRouter } from 'next/router';
 
 
 
@@ -14,6 +15,7 @@ import BasketSection from '../components/SectionComponents/BasketSection';
 const Basket:NextPage<{items:ProductType[]}> = ({items}) => {
   const reduxItems = useAppSelector((state) => state.basket.items)
   const basketItems = items.filter(product => reduxItems.find(obj => obj.id == product.Id))
+  
 
   return (
     <main>

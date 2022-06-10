@@ -8,10 +8,6 @@
 .category-section{
     margin-block: 5rem;
 
-    .container{
-
-    }
-
     &__head{
         @include flex(false,flex-end);
         gap: 2rem;

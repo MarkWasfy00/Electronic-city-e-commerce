@@ -5,7 +5,11 @@
 
 
 .section {
-    margin-block: 5rem;
+    margin-block: 2rem;
+    padding: 2rem 0;
+    &--dark-bg{
+        background-color: Colors.$back-shadow-100;
+    }
     &__header{
         @include flex(column);
         gap: 2rem;
@@ -23,24 +27,21 @@
         &__navigation{
             font-size: 3rem;
             margin-left: auto;
-            &--next,
-            &--prev{
+            &__next,
+            &__prev{
                 width: 2rem;
-                color:lighten(#000000, 80%);
-                
+                color:Colors.$back-shadow-1500;
+                &:hover{
+                    cursor: pointer;
+                }
             }
-            
         }
     }
-
     &__holder{
-        &__cards{
+        &__card{
             max-width: fit-content;
         }
     }
 }
 
 
-.dark-bg{
-    background-color: Colors.$back-shadow;
-}

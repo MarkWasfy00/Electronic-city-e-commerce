@@ -2,8 +2,7 @@ import type { NextPage } from 'next';
 import { GetServerSideProps } from 'next';
 import axios from  'axios';
 import { ProductType } from '../Config/Types/ApiTypes';
-import { useAppDispatch, useAppSelector } from '../redux/Hooks/Hooks';
-import { addItem } from '../redux/Basket/Basket';
+
 
 
 import Slider from '../components/HomeComponents/Slider';

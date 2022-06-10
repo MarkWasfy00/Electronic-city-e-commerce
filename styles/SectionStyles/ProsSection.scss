@@ -4,7 +4,7 @@
 
 
 .pros-section{
-    .container{
+    & .container{
         @include flex(column,flex-start);
         @include BREAK.media(sm){
             flex-direction: row;
