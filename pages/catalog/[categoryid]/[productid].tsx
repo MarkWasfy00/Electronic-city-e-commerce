@@ -21,8 +21,7 @@ export default ProductId
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const { categoryid,productid } = context.query
-    const baseUrl = 'http://localhost:3000/'
-    const getData = await axios.get( baseUrl + "api/Products")
+    const getData = await axios.get( process.env.HOST + "/api/Products")
     const item = await getData.data.find((product:ProductType) => product.Id == productid && product.Category == categoryid )
     if(item){
       return {

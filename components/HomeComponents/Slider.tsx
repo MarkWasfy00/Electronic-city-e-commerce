@@ -11,10 +11,10 @@ import 'swiper/css/pagination';
 const Slider = () => {
 
   const images = [
-    'https://www-file.huawei.com/-/media/corp2020/home/cbg/0518/mate_xs_2.jpg',
-    'https://i01.appmifile.com/webfile/globalimg/0320/TO-B/New-Product-Banner/mi-11t-pro-banner.jpg',
-    'http://image.oppo.com/content/dam/oppo/eg/homepage/Pc-website-2880x1440-arabic-version.jpg',
-    'https://www.hihonor.com/content/dam/honor/global/home-page/image-banner-v4/home-s1-magic-v-pc-0406.png'
+    'https://i01.appmifile.com/webfile/globalimg/0320/TO-B/New-Product-Banner/Xiaomi-12-Pro-banner-en.jpg',
+    'https://www.apple.com/v/iphone/home/bh/images/overview/retail/why_apple__ezn1ktvka6oi_large_2x.jpg',
+    'https://i01.appmifile.com/webfile/globalimg/dongxuechun/k9dbannerEn.jpg',
+    'https://www.apple.com/v/iphone/home/bh/images/overview/ios-16/ios16_preview__fpxyj72zmsuq_large_2x.jpg'
   ]
 
   return (
@@ -37,7 +37,7 @@ const Slider = () => {
         {
           images.map((img) => (
             <SwiperSlide key={img} className='swiper-edit__swiper__swiperslides'>
-              <Image className='swiper-edit__swiper__swiperslides__img' alt='slider' layout='fill' src={img}  />
+              <Image className='swiper-edit__swiper__swiperslides__img' alt='slider' layout='fill' src={img} quality={100} />
             </SwiperSlide>
           ))
         }

@@ -13,6 +13,7 @@ import '../styles/FooterStyles/Footer.scss';
 import '../styles/ErrorStyles/Error.scss';
 import '../styles/CheckoutStyles/AllCheckoutStyles.scss';
 import '../styles/ProfileStyles/AllProfileStyles.scss';
+import 'animate.css';
 
 // components 
 import Nav from '../components/HeadingComponents/Nav';

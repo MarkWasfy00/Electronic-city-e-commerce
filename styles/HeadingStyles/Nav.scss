@@ -24,16 +24,21 @@
         @include BREAK.media(sm){
             @include flex(false);
             gap: 2rem;
-            li{
+            &__item{
                 @include flex(false,center);
                 height: 4rem;
                 padding: 0 1rem;
-                transition: .1s;
+                transition: .2s;
                 &:hover{
                     background-color: Colors.$orange;
+                    cursor: pointer;
                 }
                 a{
                     color: Colors.$white;
+                }
+
+                &--active{
+                    background-color: Colors.$orange;
                 }
             }
         }
@@ -68,17 +73,21 @@
         width: 0;
         overflow: hidden;
         height: 100vh;
+        opacity: 0;
         &__lists{
             @include flex(column);
             gap: 2rem;
-            li{
+            &__item{
                 padding: 1rem;
                 &:hover:not(:last-child){
                     background-color: Colors.$orange;
                 }
                 a{
                     color: Colors.$white;
+
+                    
                 }
+                
             }
 
         }

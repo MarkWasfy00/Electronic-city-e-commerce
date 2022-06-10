@@ -29,8 +29,7 @@ const catalog:NextPage<{categories:Array<CategoriesType>}> = ({categories}) => {
 export default catalog
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const baseUrl = 'http://localhost:3000/'
-  const getData = await axios.get( baseUrl + "api/Categories")
+  const getData = await axios.get( process.env.HOST + "/api/Categories")
   const categories = await getData.data
   return {
     props:{

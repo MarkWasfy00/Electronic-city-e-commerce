@@ -19,7 +19,7 @@ const BasketCard = ({children}:BasketCard) => {
     const dispatch = useAppDispatch();
 
   return (
-    <article className='basket-card'>
+    <article className='basket-card animate__slideInUp animate__animated'>
         <div className="basket-card__remove">
             <i className="fa-solid fa-x" onClick={() => dispatch(removeItem({item:children.Id,price:getDiscount(children.Promotion,children.Price).newPrice}))}></i>
         </div>
