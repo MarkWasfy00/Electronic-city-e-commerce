@@ -15,6 +15,7 @@ export type ApiProductType = {
     Images:string[]
     Brief:{[key:string]:string}
     Promotion:number|null
+    Rate:number
     TimeStamp:{
         seconds:number
         nanoseconds:number

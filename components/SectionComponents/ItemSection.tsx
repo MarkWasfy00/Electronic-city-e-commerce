@@ -67,7 +67,7 @@ const ItemSection = ({children}:ItemSectionProps) => {
                          </div>
                          <div className="item-section__body__view__lower__cta">
                              <button onClick={() => dispatch(addItem({item:children.Id,price:getDiscount(children.Promotion,children.Price).newPrice}))} className={`item-section__body__view__lower__cta__btn link-s${children.Stock <= 0 ? ' item-section__body__view__lower__cta__btn--disabled':''}`}>Add to cart</button>
-                             <Rating name="simple-controlled"/>
+                             <Rating name="read-only" value={children.Rate} readOnly />
                          </div>
                      </div>
                  </div>

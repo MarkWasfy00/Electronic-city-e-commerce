@@ -34,7 +34,7 @@ const Card = ({children}:CardProps) => {
             <div className="card__info__id link-id">PC-{children.Id.slice(0, 5)}</div>
             <div className="card__info__title link-l-bold">{children.Title}{children.Curr}</div>
             <div className="card__info__rating">
-              <Rating name="simple-controlled"/>
+              <Rating name="read-only" value={children.Rate} readOnly />
               <div className="card__info__rating__reviews">
                 <i className="fa-solid fa-message"></i>
                 <a href="#" className="card__info__rating__reviews__total link-xxs">2 reviews</a>
